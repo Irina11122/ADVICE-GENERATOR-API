@@ -40,8 +40,8 @@ function App() {
             <h1>{`"${advice}"`}</h1>
             <div>
               <img
-                style={{ width: "100%" }}
-                src="/pattern-divider-desktop.svg"
+                style={{ width: '100%' }}
+                src="../public/pattern-divider-desktop.svg"
                 alt="divider"
               />
             </div>
@@ -53,7 +53,7 @@ function App() {
         <img
           onClick={getAdvice}
           className="dice"
-          src="/icon-dice.svg"
+          src="../public/icon-dice.svg"
           alt="dice"
         />
       </div>
