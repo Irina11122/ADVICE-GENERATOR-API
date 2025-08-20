@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { AdviceId, Card } from "./components/Card";
-
+import { useEffect, useState } from 'react';
+import { AdviceId, Card } from './components/Card';
+import Dice from './assets/icon-dice.svg';
+import Pattern from './assets/pattern-divider-desktop.svg';
 function App() {
-  const [advice, setAdvice] = useState("");
+  const [advice, setAdvice] = useState('');
   const [adviceId, setAdviceId] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -12,7 +13,7 @@ function App() {
     setError(false);
     try {
       const res = await fetch(
-        `https://api.adviceslip.com/advice?timestamp=${Date.now()}`
+        `https://api.adviceslip.com/advice?timestamp=${Date.now()}`,
       );
       const data = await res.json();
       setAdvice(data.slip.advice);
@@ -39,23 +40,14 @@ function App() {
             <AdviceId>ADVICE #{adviceId}</AdviceId>
             <h1>{`"${advice}"`}</h1>
             <div>
-              <img
-                style={{ width: '100%' }}
-                src="../public/pattern-divider-desktop.svg"
-                alt="divider"
-              />
+              <img style={{ width: '100%' }} src={Pattern} alt="divider" />
             </div>
           </>
         )}
       </Card>
 
       <div className="dice-icon">
-        <img
-          onClick={getAdvice}
-          className="dice"
-          src="../public/icon-dice.svg"
-          alt="dice"
-        />
+        <img onClick={getAdvice} className="dice" src={Dice} alt="dice" />
       </div>
     </div>
   );
